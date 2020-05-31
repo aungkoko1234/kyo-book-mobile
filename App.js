@@ -60,7 +60,7 @@ export default class App extends Component {
             <FooterTab>
               <Button
                 vertical
-                onSubmit={() => this.handleOnclikTab('home')}
+                onPress={() => this.handleOnclikTab('home')}
                 active={this.state.isHomeActive}>
                 <Icon name="home" active={this.state.isHomeActive} />
                 <Text>Home</Text>
