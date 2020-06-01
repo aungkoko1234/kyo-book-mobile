@@ -26,25 +26,23 @@ import {
   Segment,
 } from 'native-base';
 
-export default class register extends Component {
+export default class resLogin extends Component {
     
   render() {
     return (
      
       <StyleProvider style={getTheme(platform)}>
-<Container>
-<Header hasSegment style={{backgroundColor:"grey"}}>
+<Container >
+        <Header hasSegment style={{backgroundColor:"grey"}}>
           <Left>
             <Button transparent>
               <Icon name="arrow-back" />
             </Button>
           </Left>
           <Body>
-            <Title>Create your Account</Title>
+            <Title>Login to Resturant Account</Title>
           </Body>
-          <Right>
-           
-          </Right>
+         
         </Header>
   
         <Segment style={{backgroundColor:"grey"}} >
@@ -57,8 +55,6 @@ export default class register extends Component {
         
         </Segment>
 
-       
-
         <Content padder>
           <View style={styles.container}>
    
@@ -66,21 +62,12 @@ export default class register extends Component {
 
 
 
-          <View style={{ alignSelf: "center" }}>
-                    <View style={styles.profileImage}>
-                        <Image source={require("./profileP.jpg")} style={styles.image} resizeMode="center"></Image>
-                    </View>
-                   
-                   
-                    <View style={styles.add}>
-                        <Icon name="ios-add" size={48} color="#DFD8C8" style={{ marginTop: 6, marginLeft: 2 }}></Icon>
-                    </View>
-                </View>
+     
 
         <View style={styles.InputContainer}>
           <TextInput
             style={styles.body}
-            placeholder="Full Name"
+            placeholder="Resturant's Name"
             placeholderTextColor={AppStyles.color.grey}
             underlineColorAndroid="transparent"
           />
@@ -101,25 +88,10 @@ export default class register extends Component {
             underlineColorAndroid="transparent"
           />
         </View>
-        <View style={styles.InputContainer}>
-          <TextInput
-            style={styles.body}
-            placeholder="Mobile Number"
-            placeholderTextColor={AppStyles.color.grey}
-            underlineColorAndroid="transparent"
-          />
-        </View>
-        <View style={styles.InputContainer}>
-          <TextInput
-            style={styles.body}
-            placeholder="Gender"
-            placeholderTextColor={AppStyles.color.grey}
-            underlineColorAndroid="transparent"
-          />
-        </View>
+
         <View style={styles.ButtonContainer}>
           <Button bordered  style={{borderColor:"#77e686", backgroundColor:"grey"}}>
-            <Text style={styles.Text}>Sign Up</Text>
+            <Text style={styles.Text}>Login</Text>
             <Icon name="arrow-forward" style={{color: '#77e686'}} />
           </Button>
         </View>
@@ -151,7 +123,7 @@ image: {
   width: undefined
 },
 add: {
-    backgroundColor: "#77e686",
+    backgroundColor: "#41444B",
     position: "absolute",
     bottom: 0,
     right: 0,
@@ -216,12 +188,12 @@ add: {
     marginTop: 30,
   },
   ButtonContainer: {
-    width: AppStyles.textInputWidth.main,
+    width: AppStyles.textInputWidth.white,
     marginTop: 50,
     marginBottom:60,
   },
   Text: {
-    paddingLeft: 130,
+    paddingLeft:30,
     paddingRight: 0,
     color: AppStyles.color.white,
   },

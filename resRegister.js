@@ -26,7 +26,7 @@ import {
   Segment,
 } from 'native-base';
 
-export default class register extends Component {
+export default class resRgister extends Component {
     
   render() {
     return (
@@ -40,11 +40,9 @@ export default class register extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>Create your Account</Title>
+            <Title>Create your Resturant's Account</Title>
           </Body>
-          <Right>
-           
-          </Right>
+          
         </Header>
   
         <Segment style={{backgroundColor:"grey"}} >
@@ -68,7 +66,7 @@ export default class register extends Component {
 
           <View style={{ alignSelf: "center" }}>
                     <View style={styles.profileImage}>
-                        <Image source={require("./profileP.jpg")} style={styles.image} resizeMode="center"></Image>
+                        <Image source={require("./resPro.jpg")} style={styles.image} resizeMode="center"></Image>
                     </View>
                    
                    
@@ -80,7 +78,7 @@ export default class register extends Component {
         <View style={styles.InputContainer}>
           <TextInput
             style={styles.body}
-            placeholder="Full Name"
+            placeholder="Resturant's Name"
             placeholderTextColor={AppStyles.color.grey}
             underlineColorAndroid="transparent"
           />
@@ -112,7 +110,7 @@ export default class register extends Component {
         <View style={styles.InputContainer}>
           <TextInput
             style={styles.body}
-            placeholder="Gender"
+            placeholder="Company Liscene"
             placeholderTextColor={AppStyles.color.grey}
             underlineColorAndroid="transparent"
           />

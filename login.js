@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, TextInput} from 'react-native';
+import {StyleSheet, View, TextInput,Image} from 'react-native';
 import {AppStyles} from './native-base-theme/variables/AppStyles';
 import getTheme from './native-base-theme/components';
 import platform from './native-base-theme/variables/platform';
@@ -23,42 +23,48 @@ import {
   Grid,
   Col,
   transparent,
+  Segment,
 } from 'native-base';
 
 export default class login extends Component {
+    
   render() {
     return (
-      <View style={styles.container}>
-        <Grid>
-          <Col style={{backgroundColor: transparent, height: 50, width: 70}}>
-            <Button transparent style={{paddingTop: 13, height: 70, width: 70}}>
-              <Icon style={{color: 'black'}} name="arrow-back" />
+     
+      <StyleProvider style={getTheme(platform)}>
+<Container >
+        <Header hasSegment style={{backgroundColor:"grey"}}>
+          <Left>
+            <Button transparent>
+              <Icon name="arrow-back" />
             </Button>
-          </Col>
-          <Col style={{backgroundColor: transparent, height: 50}}>
-            <Text style={[styles.title]}>Log into your Account</Text>
-          </Col>
-        </Grid>
+          </Left>
+          <Body>
+            <Title>Login to your Account</Title>
+          </Body>
+          <Right>
+           
+          </Right>
+        </Header>
+  
+        <Segment style={{backgroundColor:"grey"}} >
+          <Button bordered  style={{borderColor:"#77e686"}} first>
+            <Text style={{color:"black"}}>SignUp</Text>
+          </Button>
+          <Button bordered  style={{borderColor:"#77e686"}}>
+            <Text style={{color:"black"}}>Login</Text>
+          </Button>
+        
+        </Segment>
 
-        <Grid>
-          <Col style={{backgroundColor: '#b5b5b5', height: 45}}>
-            <Button bordered borderColor="white">
-              <Text style={{color: 'black'}}>Sign Up</Text>
-            </Button>
-          </Col>
-          <Col style={{backgroundColor: '#b5b5b5', height: 45}}>
-            <Button bordered borderColor="white">
-              <Text style={{color: 'black'}}> Login </Text>
-            </Button>
-          </Col>
-        </Grid>
+        <Content padder>
+          <View style={styles.container}>
+   
 
-        <Icon
-          ios="ios-image"
-          android="ios-image"
-          style={{fontSize: 50, color: 'black'}}
-        />
-        <Text>Username</Text>
+
+
+
+     
 
         <View style={styles.InputContainer}>
           <TextInput
@@ -86,12 +92,18 @@ export default class login extends Component {
         </View>
 
         <View style={styles.ButtonContainer}>
-          <Button light>
+          <Button bordered  style={{borderColor:"#77e686", backgroundColor:"grey"}}>
             <Text style={styles.Text}>Login</Text>
-            <Icon name="arrow-forward" style={{color: 'black'}} />
+            <Icon name="arrow-forward" style={{color: '#77e686'}} />
           </Button>
         </View>
+
+
       </View>
+</Content>
+      </Container>
+      </StyleProvider>
+
     );
   }
 }
@@ -101,6 +113,28 @@ const styles = StyleSheet.create({
     flex: 5,
     alignItems: 'center',
   },
+  profileImage: {
+    width: 200,
+    height: 200,
+    borderRadius: 100,
+    overflow: "hidden"
+},
+image: {
+  flex: 1,
+  height: undefined,
+  width: undefined
+},
+add: {
+    backgroundColor: "#41444B",
+    position: "absolute",
+    bottom: 0,
+    right: 0,
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    alignItems: "center",
+    justifyContent: "center"
+},
   title: {
     fontSize: AppStyles.fontSize.title,
     fontWeight: 'bold',
@@ -139,7 +173,7 @@ const styles = StyleSheet.create({
     marginTop: 40,
     borderWidth: 1,
     borderStyle: 'solid',
-    borderColor: AppStyles.color.grey,
+    borderColor: AppStyles.color.green,
     borderRadius: AppStyles.borderRadius.main,
   },
   body: {
@@ -156,15 +190,17 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   ButtonContainer: {
-    width: AppStyles.textInputWidth.main,
+    width: AppStyles.textInputWidth.white,
     marginTop: 50,
-    marginBottom: 230,
+    marginBottom:60,
   },
   Text: {
-    paddingLeft: 146,
+    paddingLeft:30,
     paddingRight: 0,
-    color: AppStyles.color.title,
+    color: AppStyles.color.white,
   },
+
+
 
   facebookText: {
     color: AppStyles.color.white,
